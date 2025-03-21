@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata 2025 | Output Finder</title>
+    <style>
+        body {
+            background: url('9.png') no-repeat;
+            background-size: 100% 120%;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #codeImage {
+            margin-top: 80px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 30px 0;
+            box-sizing: border-box;
+            border: 2px solid #ffeb3b;
+            border-radius: 8px;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #submitBtn {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+        #submitBtn:hover {
+            background-color: #fdd835;
+        }
+        #clue {
+            display: none;
+            font-size: 26px;
+            color: #00e676;
+            margin-top: 40px;
+        }
+        #timeDisplay {
+            font-size: 20px;
+            color: #ffeb3b;
+            margin-top: 15px;
+        }
+        #nextBtn {
+            display: none;
+            margin-top: 20px;
+            background-color: #00c853;
+            color: #fff;
+            padding: 15px 30px;
+        }
+        #nextBtn:hover {
+            background-color: #00e676;
+        }
+    </style>
+</head>
+<body>
+<br><br><br><br><br><br>
+<h1>Find the Output</h1>
+<p>Carefully examine the code in the image below and type the correct output in the box.</p>
+
+<img id="codeImage" src="out.png" alt="Code Image">
+
+<p>Enter the output of the code (exact match required):</p>
+<input type="text" id="outputInput" placeholder="">
+<br>
+<button id="submitBtn" onclick="checkOutput()">Submit</button>
+
+<div id="clue">
+    🎯 <strong>Congratulations!</strong> Your Next Gaming Challenge is: <span style="color: #ffeb3b;">Stone_Paper_Scissor</span>
+    <div id="timeDisplay"></div>
+</div>
+
+<button id="nextBtn" onclick="goToNext()">Next Game</button>
+
+<script>
+function checkOutput() {
+    const userOutput = document.getElementById("outputInput").value.trim();
+    const actualOutput = "[1,2,4,5]";
+
+    if (userOutput === actualOutput) {
+        const clue = document.getElementById("clue");
+        const nextBtn = document.getElementById("nextBtn");
+
+        clue.style.display = "block";
+        nextBtn.style.display = "inline-block";
+
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+
+        document.getElementById("timeDisplay").innerText = `✅ Time Completed: ${currentTime}`;
+    } else {
+        alert("❌ Incorrect output! Please check the code again and try.");
+    }
+}
+
+function goToNext() {
+    window.open("https://stone-pape.netlify.app", "_blank");
+}
+</script>
+
+</body>
+</html>
