@@ -73,7 +73,8 @@
 <body>
 <br><br><br><br><br><br>
 <h1>Find the Output</h1>
-<p>Carefully examine the code in the image below and type the correct output in the box.</p>
+<h2>Carefully examine the code in the image below and type the correct output in the box.</h2>
+<h3>While writing the output, keep an eye on the <I>SPACES</I>.That can cause <I>ERROR</I> in Output matching.</h3>
 
 <img id="codeImage" src="out.png" alt="Code Image">
 
@@ -92,7 +93,7 @@
 <script>
 function checkOutput() {
     const userOutput = document.getElementById("outputInput").value.trim();
-    const actualOutput = "[1,2,4,5]";
+    const actualOutput = "[1, 2, 4, 5]";
 
     if (userOutput === actualOutput) {
         const clue = document.getElementById("clue");
@@ -114,7 +115,7 @@ function checkOutput() {
 }
 
 function goToNext() {
-    window.open("https://stone-papers.netlify.app", "_blank");
+    window.open("https://stone-scissor.netlify.app", "_blank");
 }
 </script>
 
